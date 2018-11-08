@@ -24,11 +24,11 @@ export default class App extends Component<Props> {
   }
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.container} testID="home">
         <Text style={styles.welcome}>Counter App</Text>
         <View>
-          <Text>{this.state.count}</Text>
-          <Button title="Add" onPress={this.incCounter.bind(this)}/>
+          <Text testID="count">{this.state.count}</Text>
+          <Button title="Add" onPress={this.incCounter.bind(this)} testID="addButton"/>
           <Button title="Subtract" onPress={this.decCounter.bind(this)}/>
           <Button title="Reset" onPress={this.resetCounter.bind(this)}/>
         </View>
@@ -50,7 +50,7 @@ export default class App extends Component<Props> {
   renderModal() {
     const { modalVisible, count } = this.state;
     return (
-      <Modal visible={modalVisible}>
+      <Modal visible={modalVisible} testID="modal">
         <View style={styles.container}>
           <Text>Yay! You've reached {count}</Text>
           <Button title="Close" onPress={()=>{this.setState({modalVisible: false})}}/>

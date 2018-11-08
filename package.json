@@ -7,16 +7,27 @@
     "test": "jest"
   },
   "dependencies": {
+	"dotenv": "^6.1.0",	
+    "appium-doctor": "^1.6.0",
     "react": "16.6.0-alpha.8af6728",
     "react-native": "0.57.4"
   },
   "devDependencies": {
+	  "@babel/core": "^7.1.2",
+    "appium": "^1.9.1",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "23.6.0",
+    "babel-preset-react-native": "5.0.2",
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.49.0",
-    "react-test-renderer": "16.6.0-alpha.8af6728"
+    "react-test-renderer": "16.6.0-alpha.8af6728",
+    "wd": "^1.11.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+      "^.+\\.(bmp|gif|jpg|jpeg|mp4|png|psd|svg|webp)$": "<rootDir>/node_modules/react-native/jest/assetFileTransformer.js"
+    }
   }
 }
